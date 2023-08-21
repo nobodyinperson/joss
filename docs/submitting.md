@@ -323,6 +323,18 @@ docker run --rm \
     openjournals/inara
 ```
 
+### Apptainer
+
+If you have [Apptainer](https://apptainer.org/) installed, you can build the paper draft locally using the same Docker image as above:
+
+```bash
+apptainer run docker://openjournals/inara paper/paper.md
+# Or to be specific about the journal:
+apptainer exec docker://openjournals/inara /usr/bin/env JOURNAL=joss /usr/local/bin/inara paper/paper.md
+```
+
+Neither root privileges nor a running daemon are required for this.
+
 ## Submitting your paper
 
 Submission is as simple as:
